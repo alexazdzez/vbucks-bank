@@ -1,5 +1,6 @@
 from tkinter import *
 import webbrowser
+import stock
 
 
 def open_zertou_frais_chanel():
@@ -22,6 +23,7 @@ root.config(background='#3F3F3F')
 frame_center = Frame(root, bg='#3F3F3F')
 frame_bottom = Frame(root, bg='#3F3F3F')
 frame_inscription = Frame(root, bg='#3F3F3F')
+frame_connection = Frame(root, bg='#3F3F3F')
 
                                                                         # titre (texte)
 label_title = Label(frame_center, text="Banque", font=("Arial", 25), bg='#3F3F3F', fg='gray')
@@ -42,17 +44,24 @@ yt_button.pack(pady=25)
 id_var = StringVar()
 mdp_var = StringVar()
 
-                                                                        # entry
+                                                                        # textes (gauche)
 label_inscri = Label(frame_inscription, text="pour s'inscrire", font=("Arial", 20), bg='#3F3F3F', fg='gray')
 label_inscri.pack(side=TOP)
+
+label_inscri_info = Label(frame_inscription, text="le premier blanc pour l'identifiant", font=("Arial", 20), bg='#3F3F3F', fg='gray')
+label_inscri_info.pack(side=TOP)
+
+label_inscri_info_two = Label(frame_inscription, text="le second pour le mot de passe", font=("Arial", 20), bg='#3F3F3F', fg='gray')
+label_inscri_info_two.pack(side=TOP)
+                                                                        # entry
 id = Entry(frame_inscription, textvariable=id_var)
 id.pack()
 mdp = Entry(frame_inscription, textvariable=mdp_var)
 mdp.pack()
 
+
                                                                         # bouton enregister (logique)
-def retrieve_text():
-    # Retrieve the text from the textvariable
+def inscrire():
     id_text = id_var.get()
     mdp_text = mdp_var.get()
     lened_id = len(id_text)
@@ -60,17 +69,32 @@ def retrieve_text():
     if lened_mdp >= 6:
         print("id :", id_text)
         print("mdp :", mdp_text)
+        stock.add(id_text, mdp_text)
     else:
         print("mot de passe trop court")
-
-
+                                                                        # bouton se connecter (logique)
+def connecter():
+    id_text = id_var.get()
+    mdp_text = mdp_var.get()
+    lened_id = len(id_text)
+    lened_mdp = len(mdp_text)
+    if lened_mdp >= 6:
+        print("id :", id_text)
+        print("mdp :", mdp_text)
+        stock.add(id_text, mdp_text)
+    else:
+        print("mot de passe trop court")
                                                                         # bouton enregister
-button = Button(frame_inscription, text="s'inscrire", command=retrieve_text)
+button = Button(frame_inscription, text="s'inscrire", command=inscrire)
+button.pack()
+                                                                        # bouton se connecter
+button = Button(frame_connection, text="se connecter", command=connecter)
 button.pack()
 
                                                                         # pack frames
 frame_bottom.pack(side=BOTTOM)
 frame_inscription.pack(side=LEFT)
+frame_connection.pack(side=RIGHT)
 frame_center.pack(expand=YES)
 
                                                                         # menu
