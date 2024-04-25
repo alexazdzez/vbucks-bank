@@ -1,8 +1,7 @@
 from tkinter import *
 import webbrowser
 import stock
-import stock_vbucks
-stock_vbucks.v_bucks()
+
 
 def open_zertou_frais_chanel():
     webbrowser.open_new("https://www.youtube.com/channel/UCFLeKci8Um3O9ZNcchvSW3A")

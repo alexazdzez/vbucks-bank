@@ -3,13 +3,11 @@ import stock_vbucks
 
 
 def add(id, mdp):
-    print("")
 
     file = open('save', 'wb')
-    sauvegarde = [
-        id,
-        mdp,
-    ]
+    sauvegarde = {
+        id : mdp
+    }
     pickle.dump(sauvegarde, file)
     file.close()
 
