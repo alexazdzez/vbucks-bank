@@ -78,8 +78,6 @@ def inscrire():
     lened_id = len(id_text)
     lened_mdp = len(mdp_text)
     if lened_mdp >= 6:
-        print("id :", id_text)
-        print("mdp :", mdp_text)
         stock.add(id_text, mdp_text)
     else:
         print("mot de passe trop court")
