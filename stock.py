@@ -35,6 +35,6 @@ def connect(idrecu, mdprecu):
 
 def compare(mdprecu, mdp):
     if mdprecu == mdp:
-            stock_vbucks.v_bucks()
+            compte = stock_vbucks.Compte()
             return
     print("l'identifiant ou le mot de passe est incorrect")
