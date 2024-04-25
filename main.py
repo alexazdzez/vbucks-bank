@@ -44,6 +44,9 @@ yt_button.pack(pady=25)
 id_var = StringVar()
 mdp_var = StringVar()
 
+id_var_connect = StringVar()
+mdp_var_connect = StringVar()
+
                                                                         # textes (gauche)
 label_inscri = Label(frame_inscription, text="pour s'inscrire", font=("Arial", 20), bg='#3F3F3F', fg='gray')
 label_inscri.pack(side=TOP)
@@ -58,6 +61,11 @@ id = Entry(frame_inscription, textvariable=id_var)
 id.pack()
 mdp = Entry(frame_inscription, textvariable=mdp_var)
 mdp.pack()
+
+id_connect = Entry(frame_connection, textvariable=id_var_connect)
+id_connect.pack()
+mdp_connect = Entry(frame_connection, textvariable=mdp_var_connect)
+mdp_connect.pack()
 
 
                                                                         # bouton enregister (logique)
@@ -76,14 +84,7 @@ def inscrire():
 def connecter():
     id_text = id_var.get()
     mdp_text = mdp_var.get()
-    lened_id = len(id_text)
-    lened_mdp = len(mdp_text)
-    if lened_mdp >= 6:
-        print("id :", id_text)
-        print("mdp :", mdp_text)
-        stock.add(id_text, mdp_text)
-    else:
-        print("mot de passe trop court")
+    stock.connect(id_text, mdp_text)
                                                                         # bouton enregister
 button = Button(frame_inscription, text="s'inscrire", command=inscrire)
 button.pack()
