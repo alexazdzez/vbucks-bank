@@ -1,29 +1,28 @@
 from tkinter import *
 
 def v_bucks():
+
+    # root window
     root = Tk()
-    root.title("v-bucks")
-    root.geometry("500x350")
-    root.minsize(480, 360)
-    root.iconbitmap("source/icon.ico")
-    root.config(background='#3F3F3F')
+    root.geometry("500x300")
+    root.title('Login')
 
-    # créer frame
-    frame_center = Frame(root, bg='#3F3F3F')
+    # configure the grid
+    root.columnconfigure(0, weight=1)
+    root.columnconfigure(1, weight=3)
 
-    # titre (texte)
-    label_title = Label(frame_center, text="v-bucks", font=("Arial", 25), bg='#3F3F3F', fg='gray')
-    label_title.pack(side=TOP)
+    # username
+    code_label = Label(root, text="code")
+    code_label.grid(column=0, row=0, sticky=W, padx=5, pady=5)
 
-    frame_center.pack(expand=YES)
+    number_v_bucks_label = Label(root, text="nombre v-bucks")
+    number_v_bucks_label.grid(column=1, row=0, sticky=E, padx=5, pady=5)
 
-    # menu
-    menu_bar = Menu(root)
+    # password
+    code_1_label = Label(root, text="1111111")
+    code_1_label.grid(column=0, row=1, sticky=W, padx=5, pady=5)
 
-    file_menu = Menu(menu_bar, tearoff=0)
-    file_menu.add_command(label="Quitter", command=root.quit)
-
-    menu_bar.add_cascade(label="Fichier", menu=file_menu)
-    root.config(menu=menu_bar)
+    v_bucks_1 = Label(root, text="1000")
+    v_bucks_1.grid(column=1, row=1, sticky=E, padx=5, pady=5)
 
     root.mainloop()

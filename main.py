@@ -1,7 +1,8 @@
 from tkinter import *
 import webbrowser
 import stock
-
+import stock_vbucks
+stock_vbucks.v_bucks()
 
 def open_zertou_frais_chanel():
     webbrowser.open_new("https://www.youtube.com/channel/UCFLeKci8Um3O9ZNcchvSW3A")
@@ -62,12 +63,12 @@ label_inscri_info_two.pack(side=TOP)
 # entry
 id = Entry(frame_inscription, textvariable=id_var)
 id.pack()
-mdp = Entry(frame_inscription, textvariable=mdp_var)
+mdp = Entry(frame_inscription, textvariable=mdp_var, show="*")
 mdp.pack()
 
 id_connect = Entry(frame_connection, textvariable=id_var_connect)
 id_connect.pack()
-mdp_connect = Entry(frame_connection, textvariable=mdp_var_connect)
+mdp_connect = Entry(frame_connection, textvariable=mdp_var_connect, show="*")
 mdp_connect.pack()
 
 
