@@ -1,6 +1,7 @@
 import pickle
 import stock_vbucks
 
+
 def add(id, mdp):
     try:
         #lis fichier mdp
@@ -19,6 +20,13 @@ def add(id, mdp):
     file.close()
 
 
+def compare(mdp, mdprecu):
+    if mdprecu == mdp:
+        compte = stock_vbucks.Compte()
+        return
+    print("l'identifiant ou le mot de passe est incorrect")
+
+
 def connect(idrecu, mdprecu):
     try:
         file = open('save', 'rb')
@@ -26,15 +34,8 @@ def connect(idrecu, mdprecu):
         file.close()
 
         if idrecu in sauvegarde.keys():
-            compare(mdprecu, sauvegarde[idrecu])
+            compare(sauvegarde[idrecu], mdprecu)
         else:
             print("l'identifiant ou le mot de passe est incorrect")
     except:
         pass
-
-
-def compare(mdprecu, mdp):
-    if mdprecu == mdp:
-            compte = stock_vbucks.Compte()
-            return
-    print("l'identifiant ou le mot de passe est incorrect")

@@ -2,12 +2,11 @@ from tkinter import *
 import webbrowser
 import stock
 
+def open_zertou_frais_chanel(self):
+        webbrowser.open_new("https://www.youtube.com/channel/UCFLeKci8Um3O9ZNcchvSW3A")
 
-def open_zertou_frais_chanel():
-    webbrowser.open_new("https://www.youtube.com/channel/UCFLeKci8Um3O9ZNcchvSW3A")
 
-
-def rick_roll():
+def rick_roll(self):
     webbrowser.open_new("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
     # base de la fenetre
@@ -37,8 +36,7 @@ label_subtitle = Label(frame_bottom, text="®zertou, mpxp Inc.", font=("Courrier
 label_subtitle.pack(side=BOTTOM)
 
 # boutons (centre)
-yt_button = Button(frame_bottom, text="youtube", font=("Courrier", 15), bg='gray', fg='#3F3F3F',
-                   command=open_zertou_frais_chanel)
+yt_button = Button(frame_bottom, text="youtube", font=("Courrier", 15), bg='gray', fg='#3F3F3F', command=open_zertou_frais_chanel)
 yt_button.pack(pady=25)
 
 # var pour inscri
@@ -53,11 +51,11 @@ label_inscri = Label(frame_inscription, text="pour s'inscrire", font=("Arial", 2
 label_inscri.pack(side=TOP)
 
 label_inscri_info = Label(frame_inscription, text="le premier blanc pour l'identifiant", font=("Arial", 20),
-                          bg='#3F3F3F', fg='gray')
+                                  bg='#3F3F3F', fg='gray')
 label_inscri_info.pack(side=TOP)
 
 label_inscri_info_two = Label(frame_inscription, text="le second pour le mot de passe", font=("Arial", 20),
-                              bg='#3F3F3F', fg='gray')
+                                      bg='#3F3F3F', fg='gray')
 label_inscri_info_two.pack(side=TOP)
 # entry
 id = Entry(frame_inscription, textvariable=id_var)
