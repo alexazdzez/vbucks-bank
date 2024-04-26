@@ -21,7 +21,7 @@ def add_vucks(mdp, code):
 
 def read_vbucks(mdp):
     try:
-        print("debut")
+        print(mdp)
         file = open('savevbucks', 'rb')
         savevbucks = pickle.load(file)
         file.close()
