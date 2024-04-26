@@ -1,9 +1,11 @@
 from tkinter import *
+import save_vbucks
 
 
 class Compte:
-    def __init__(self):
+    def __init__(self, id):
         # root window
+        self.mdp = id
         self.root = Tk()
         self.root.geometry("500x300")
         self.root.title('bank')
@@ -28,6 +30,10 @@ class Compte:
         self.frame_buttons = Frame(self.root)
         self.button = Button(self.frame_buttons, text="ajouter", command=self.ajouter)
         self.button.pack(side=BOTTOM)
+        self.button_save = Button(self.frame_buttons, text="enregistrer", command=self.save)
+        self.button_save.pack(side=BOTTOM)
+        self.button_read = Button(self.frame_buttons, text="lire", command=self.read)
+        self.button_read.pack(side=BOTTOM)
 
         self.frame_buttons.pack(side=BOTTOM)
         self.frame_code.pack(side=LEFT)
@@ -35,5 +41,11 @@ class Compte:
         self.root.mainloop()
 
     def ajouter(self):
-        label = Label(self.root, text="code: "+self.code.get()+" nombre de v-bucks: "+self.v_bucks.get())
+        label = Label(self.root, text="code: " + self.code.get() + " nombre de v-bucks: " + self.v_bucks.get())
         label.pack()
+
+    def save(self):
+        save_vbucks.add_vucks(self.mdp, self.code.get())
+
+    def read(self):
+        save_vbucks.read_vbucks(self.mdp)

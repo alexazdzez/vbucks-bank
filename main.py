@@ -2,11 +2,11 @@ from tkinter import *
 import webbrowser
 import stock
 
-def open_zertou_frais_chanel(self):
+def open_zertou_frais_chanel():
         webbrowser.open_new("https://www.youtube.com/channel/UCFLeKci8Um3O9ZNcchvSW3A")
 
 
-def rick_roll(self):
+def rick_roll():
     webbrowser.open_new("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
     # base de la fenetre

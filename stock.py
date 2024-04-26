@@ -22,9 +22,9 @@ def add(id, mdp):
 
 def compare(mdp, mdprecu):
     if mdprecu == mdp:
-        compte = stock_vbucks.Compte()
+        compte = stock_vbucks.Compte(id=mdp)
         return
-    print("l'identifiant ou le mot de passe est incorrect")
+    print("le mot de passe est incorrect")
 
 
 def connect(idrecu, mdprecu):
@@ -36,6 +36,6 @@ def connect(idrecu, mdprecu):
         if idrecu in sauvegarde.keys():
             compare(sauvegarde[idrecu], mdprecu)
         else:
-            print("l'identifiant ou le mot de passe est incorrect")
+            print("l'identifiant est incorrect")
     except:
         pass
